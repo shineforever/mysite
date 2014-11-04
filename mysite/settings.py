@@ -106,4 +106,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+
 STATIC_URL = '/static/'
+
+PROJECT_ROOT=os.path.join(os.path.abspath(os.path.dirname(__file__)),'..')
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT,'static')
+
+STATICFILES_DIRS = (
+# Put strings here, like "/home/html/static" or "C:/www/django/static".
+# Always use forward slashes, even on Windows.
+("css", os.path.join(STATIC_ROOT,'static/css')),
+("js", os.path.join(STATIC_ROOT,'static/js')),
+("images", os.path.join(STATIC_ROOT,'static/img')),
+)
+
+
+
+TEMPLATE_DIRS = (
+os.path.join(os.path.dirname(__file__), '../templates').replace('\\','/'),
+)
